@@ -2,9 +2,9 @@
 
 I've been building LLM integrations into the software development lifecycle—automated code review, ticket triage, investigation workflows. The productivity gains are real. So is the security exposure. These systems ingest untrusted content from Jira tickets, pull requests, and user comments, then act on it. Prompt injection isn't theoretical here; it's the primary threat model.
 
-You can't regex your way past an adversary who can rephrase attacks in Swahili, pig latin, or base64. Research confirms what practitioners already know: content filters and safety training can be systematically defeated. The real question isn't "how do I sanitize input?" It's "what can a hijacked LLM actually touch?"
+You can't regex your way past an adversary who can rephrase attacks in Swahili, українська, pig latin, or base64. [Practitioners already know](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html#best-of-n-attack-mitigation): content filters and safety training can be systematically defeated. The real question isn't "how do I sanitize input?" It's "what can a hijacked LLM actually touch?"
 
-Assume your filters will fail. Then build accordingly—across three dimensions: architecture, containment, and detection.
+Assume your filters will fail. Then build accordingly. There are three dimensions I consider: architecture, containment, and detection.
 
 ## Architecture
 
