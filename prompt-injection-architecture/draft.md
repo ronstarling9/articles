@@ -8,19 +8,19 @@ Assume your filters will fail. Then build accordingly. There are three dimension
 
 ## Architecture
 
-The LLM is a function called by a deterministic orchestrator—not an agent with integration credentials. The orchestrator follows hardwired logic that cannot change at runtime. It controls integrations with systems of record like Jira and GitHub, fetches the data, and provides the LLM with everything it needs to perform a task. The model analyzes and generates; it never directly touches external systems.
+Treat the LLM as a function called by a deterministic orchestrator—not an agent with integration credentials. The orchestrator follows hardwired logic that cannot change at runtime. It controls integrations with systems of record like Jira and GitHub, fetches the data, and provides the LLM with everything it needs to perform a task. The model analyzes and generates; it never directly touches external systems.
 
 Permissions get scoped per task. An investigation workflow doesn't need write access. A code review task doesn't need network. If the LLM gets hijacked, the blast radius is limited to what that specific task was allowed to do in the first place.
 
 ## Containment
 
-The LLM runs inside an OS-level sandbox—a container or namespace with its own restricted view of the filesystem and network. Only allowlisted paths are visible. Outbound network access can be disabled entirely or limited to specific endpoints. The model can't reach what it can't see.
+Run the LLM inside an OS-level sandbox—a container or namespace with its own restricted view of the filesystem and network. Only allowlisted paths are visible. Outbound network access can be disabled entirely or limited to specific endpoints. The model can't reach what it can't see.
 
 Each action runs in a fresh environment. The repo gets cloned new; there's no persistent state between invocations. A compromised prompt can't establish a foothold because there's nothing to persist to. When the task ends, the environment is destroyed.
 
 ## Detection
 
-Structured prompts draw clear boundaries between instructions and untrusted data. Tags and delimiters mark external content explicitly, making it harder for injections to masquerade as system instructions.
+Structure your prompts to draw clear boundaries between instructions and untrusted data. Tags and delimiters mark external content explicitly, making it harder for injections to masquerade as system instructions.
 
 Task anchoring takes this further. When the model has a clear, specific purpose—"analyze this code for security vulnerabilities"—injections that try to redirect it toward unrelated actions become semantically incongruous. The model is primed to stay on task, and off-topic instructions feel out of place. It's not foolproof, but it raises the bar.
 
