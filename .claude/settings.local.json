@@ -4,7 +4,11 @@
       "WebSearch",
       "Bash(git init:*)",
       "Skill(superpowers:brainstorming)",
-      "WebFetch(domain:cheatsheetseries.owasp.org)"
+      "WebFetch(domain:cheatsheetseries.owasp.org)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Skill(elements-of-style:writing-clearly-and-concisely)"
     ],
     "deny": [],
     "ask": []
