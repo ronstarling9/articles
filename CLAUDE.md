@@ -26,6 +26,8 @@ When helping with articles in this repository:
 3. **Target platforms matter** - Check the brainstorm file for target platform (e.g., LinkedIn) and word count constraints
 4. **Contrarian framing** - Current articles use deliberately contrarian positioning; maintain this approach unless directed otherwise
 
+Take inspiration from my favorite authors: Martin Fowler, Frank Herbert, and Craig Alanson.
+
 ##Workflow
 1. First, think through the problem. Read recommended and supporting research before writing a plan in a todo.md in the article working directory.
 2. The plan should be a checklist of todo items.
@@ -34,3 +36,7 @@ When helping with articles in this repository:
 5. At every step give me a high level explanation of what you changed.
 6. Keep every change simple and minimal.
 7. At the end use the writing-clearly-and-concisely skill to review for clarity and proper style.
+
+## Git Commits
+
+Do not mention Claude Code as author or generator in commit messages. Keep commits simple and descriptive.
