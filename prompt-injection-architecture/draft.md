@@ -1,5 +1,7 @@
 # The Prompt Injection Problem Isn't a Filtering Problem. It's an Architecture Problem.
 
+I've been building LLM integrations into the software development lifecycle—automated code review, ticket triage, investigation workflows. The productivity gains are real. So is the security exposure. These systems ingest untrusted content from Jira tickets, pull requests, and user comments, then act on it. Prompt injection isn't theoretical here; it's the primary threat model.
+
 You can't regex your way past an adversary who can rephrase attacks in Swahili, pig latin, or base64. Research confirms what practitioners already know: content filters and safety training can be systematically defeated. The real question isn't "how do I sanitize input?" It's "what can a hijacked LLM actually touch?"
 
 Assume your filters will fail. Then build accordingly—across three dimensions: architecture, containment, and detection.
