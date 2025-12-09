@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Skill(superpowers:brainstorming)",
+      "WebFetch(domain:cheatsheetseries.owasp.org)"
     ],
     "deny": [],
     "ask": []
